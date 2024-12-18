@@ -1,0 +1,10 @@
+<!-- Este archivo es para capitulo 1 -->
+\pagenumbering{arabic}
+# Introducción
+
+Las prácticas pre-profesionales nos permiten integrar los conocimientos y habilidades adquiridas en la formación académica, puesto que estas constituyen una fase clave en el desarrollo profesional. En este contexto, se ha tenido la oportunidad de realizar Prácticas Pre-Profesionales (PPP) en la Universidad Nacional de San Antonio Abad del Cusco, en particular en la Unidad de Estadística.
+
+Esta oficina se encuentra ubicada en el pabellón del instituto de idiomas, tercer piso, las prácticas se desarrollaron durante cinco horas diarias, de 8:00 a.m. a 1:00 p.m. El periodo de tiempo establecido fue de cuatro meses, se desarrolló diversas actividades durante este periodo resaltándose los estadísticos para el compendio estadístico 2024, el costo financiero por alumno 2019-2023 y la organización de bases de datos
+
+El presente informe ofrece un relato detallado de las funciones desempeñadas durante el periodo de las prácticas pre-profesionales.
+

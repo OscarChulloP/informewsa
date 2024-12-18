@@ -1,0 +1,78 @@
+project:
+  type: book
+editor: source
+book:
+  # Coloca el titulo de la tesis
+  title: "Unidad de Estadística - UNSAAC"
+  author: 
+    #tesista
+    - name: "Oscar Chullo Puclla"
+    #asesor
+    - name: "Betty Alegre Ramos"
+  # Coloca la nominación del año
+##  subtitle: "Año de la ..."
+  date: "14 June 2024"
+  date-format: "YYYY" ## para mostrar solo año
+  # En chapters debes enumerar todos los archivos qmd, 
+  # OJO: a "index.qmd" no le puedes cambiar el nombre
+  chapters:
+    - index.qmd
+    - capitulo_2.qmd
+    - summary.qmd
+    - references.qmd
+# Coloca el logo central de la carátula
+cover: imagen\unsaac.png
+# "references.bib" es en formato bibLatex para las referencias
+bibliography: references.bib
+csl: apa.csl
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+    keep-tex: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    toc-title: "Índice general"
+    lof: true
+    geometry:
+      - inner=2.54cm
+      - outer=2.54cm
+      - top=2.54cm
+      - bottom=2.54cm
+      - headsep=22pt
+      - headheight=11pt
+      - footskip=33pt
+      - ignorehead
+      - ignorefoot
+      - heightrounded
+    indent: true
+    linestretch: 2
+    fontsize: 12pt
+    mainfont: "Times New Roman"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    template-partials:
+      - tex\before-body.tex ## pertenece a la portada central, abrir para editar
+include-in-header: tex\include-in-header.tex
+include-before-body: tex\include-in-body.tex
+crossref:
+  fig-title: Figura ## Prefijo en la figura
+  fig-labels: arabic ## numeracion de figuras
+  fig-prefix: figura  ## Prefijo de referenciación
+  tbl-title: Tabla ## Prefijo en la figura
+  tbl-prefix: tabla ## Prefijo de referenciación
+  title-delim: ":"
+  lof-title: "Índice de figuras" ## nombre del indice de figuras
+  eq-prefix: ecuación ## Prefijo de referenciación
+## Establece el idioma
+lang: es
+## Coloca tu dedicatoria o agradecimientos
+#dedicatoria: "para aquellos que leen"
+#agradecimiento: 
+#  - Agradezco a .... por haberme ayudado con su compania y amistad durante los momentos mas dificles q pase al realizar esta tesis
+departamento: CUSCO
+pais: PERÚ
+fig-cap-location: top
+fig-align: center

@@ -1,0 +1,36 @@
+# Unidad de Estadística
+
+La Unidad de Estadística es una Unidad Orgánica comprendida dentro de la organización de la Direccion de Sistemas de Informacion, tiene a su cargo la recopilación, sistematización, análisis y publicación de los datos estadísticos necesarios para la planificación y programación de las actividades que desarrolla la universidad, realiza estudios y diagnósticos sociales, económicos  y académicos.[@fao]
+
+## Funciones
+
+- Ejecutar las actividades estadísticas de acuerdo a los requerimientos institucionales.
+- Capturar, elaborar, revisar, criticar validar y procesar para su difusión, las estadísticas a fin de facilitar la gestión y toma de decisiones.
+- Suministrar datos estadísticos solicitados por las diferentes dependencias del Nivel Nacional, Regional, Local e institucional.
+- Asesorar a la Alta Dirección en asuntos de manejo de información estadística.
+- Realizar estudios estadísticos sobre aspectos diversos de la problemática universitaria que permita un mejor conocimiento de la realidad.
+- Elaborar indicadores e índices económicos y sociales para el análisis y formulación de políticas institucionales.
+- Establecer métodos para el cálculo de tendencias y/o proyecciones estadísticas.
+- Realizar diagnósticos sociales económicos y académicos de la Universidad.
+- Publicar anualmente boletines estadísticos, trípticos y otros documentos.
+- Organizar y administrar el banco de datos estadísticos de la institución.
+- Velar por la capacitación permanente del personal del Área.
+- Elaborar el plan de trabajo anual del Área.
+- Coordinar la recopilación, procesamiento de datos estadísticos con las diferentes dependencias de la institución.
+
+## Organización
+
+1. **Órgano de Dirección:** "Unidad de Estadística"
+- **Órganos de Línea:** "Unidad de Recopilación, procesamiento y análisis estadístico" y "Unidad de Estudios socio económicos"
+
+2. **Personal del Área:** 
+- **Jefe de la Unidad de Estadística:**  Econ CARLOS HUAMAN AGUILAR
+- **Teléfono:** 989414939
+- **Anexo:** 1004, 
+- **correo electrónico:** estadistica@unsaac.edu.pe
+
+## Misión
+Producir y difundir las estadísticas de la UNSAAC con calidad y transparencia para la toma de decisiones en materia académica, administrativa y política institucional.
+
+## Visión
+Ser reconocida, como la fuente fundamental de las estadísticas de la UNSAAC por la calidad en sus productos y servicios ofrecidos a los demandantes.

@@ -1,0 +1,84 @@
+\pagenumbering{roman} %%numeracion en numeros romanos para la primera parte
+%% justo hasta antes de indice
+\thispagestyle{empty}
+\hspace{0.075\textwidth} 
+\begin{minipage}[b][\textheight][s]{0.85\textwidth}
+
+%% Formalidad, encabezado nombrev de: U,Facultad,etc
+\centering
+\textbf{\large{Universidad Nacional de San Antonio Abad del Cusco}} \\
+\textbf{\large{Facultad de ciencias físicas, químicas y matemáticas}} \\
+\textbf{\large{Escuela profesional de matemáticas y estadística}} \\
+\textbf{\large{$subtitle$}} \\ %% subtitle es para nominación del año
+\vspace{1\baselineskip}
+
+%% Logo central
+$if(cover)$\includegraphics[width=6cm]{$cover$}$endif$
+\vspace{1\baselineskip}
+
+% Parte tesis encuadrada
+\Large{\textbf{INFORME DE PRÁCTICAS PRE-PROFESIONALES:}} \\
+\hrulefill \\
+{\Large\bfseries{$title$}} \\
+\hrulefill 
+
+% Abstract
+$if(abstract)$%
+\begin{flushright}%
+{{$abstract$}}\\[4\baselineskip]%
+\end{flushright}%
+$endif$
+
+\large{
+\flushleft \hspace{6cm}
+\textbf{JEFE DE LA UNIDAD DE} \\\hspace{6cm}
+\textbf{ESTADÍSTICA:} \\
+\hspace{6cm} Econ. Carlos Huamán Aguilar \\ 
+\smallskip
+\hspace{6cm} \textbf{PRESENTADO POR:} \\ \hspace{6cm}
+$if(by-author/allbutlast)$
+$for(by-author/allbutlast)$
+ {\large{$by-author.name.literal$}}
+$endfor$
+$endif$
+\\
+\smallskip
+\hspace{6cm} \textbf{DOCENTE:} \\ \hspace{6cm}
+$for(by-author/last)$%
+{\large{$by-author.name.literal$}}%
+$endfor$
+}
+
+\vfill
+
+\centering
+\Large{$departamento$ - $pais$} \\
+\Large{$date$}
+\vspace{0.1\textheight} 
+\end{minipage}
+
+%%% Colocar capitulo y pagina sobre el índice
+\addtocontents{toc}{\hspace{-0.1mm} \textbf{Capítulos}}
+\addtocontents{toc}{\hfill \textbf{Página} \par}
+\addtocontents{toc}{\vspace{-2mm} \hspace{-7.5mm} \hrule \par}
+
+%%% Editar dedicatoria
+$if(dedicatoria)$
+\begin{flushright}
+  \vspace*{\fill}
+\textit{$dedicatoria$}
+\vspace*{\fill}
+\end{flushright}
+$endif$
+
+\pagebreak %% no quitar porque se juntara todo
+
+%% Editar agradecimiento
+$if(agradecimiento)$
+\textbf{AGRADECIMIENTOS}
+\begin{flushright}
+\begin{minipage}{10cm}
+\textit{$agradecimiento$}
+\end{minipage}
+\end{flushright}
+$endif$

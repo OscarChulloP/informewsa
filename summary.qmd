@@ -1,0 +1,85 @@
+# Desarrollo de Prácticas Pre-Profesionales (PPP)
+
+## Setiembre
+
+### Elaboracion del registro de bachilleres y titulados de la escuela profesional de Ingeniería Informática y de Sistemas (1993-2023)
+
+La primera actividad realizada fue la de elaborar un registro completo de bachilleres y titulados de la E.P. de Ingeniería Informática y de Sistemas, durante el periodo 1993-2023 bajo solicitud del Director de escuela correspondiente, se hizo una revision de recursos dentro de la Unidad de Estadística en los cuales se evidenciaron las siguientes dificultades:
+- Falta de Organización en los documentos y la información de años pasados.
+- Pérdida de Información de los registros correspondientes al año 2007, no hubo en libros ni en los CD´s.
+
+Por ello se remitió un registro del periodo 1993-2023 a excepción del 2007.
+
+### Elaboración de estadísticos de los estudiantes matriculados del semestre 2024-I
+
+Se realizo una limpieza de datos en el registro de estudiantes matriculados correspondientes al semestre 2024-I, puesto que se tenia error en el registro de sexo (varones registrados como mujeres y viceversa), e información faltante en los lugares de procedencia, años de nacimiento y edades, recurriendose al uso de tecnicas de imputación de datos adquiridos en la formación como estadístico. A continuación se presentan los resultados obtenidos en grafícos:
+
+![Alumnos matriculados según sexo, semestre 2024-I](imagen/imagen3.png){width=70%}
+
+![Alumnos matriculados según facultad, semestre 2024-I](imagen/imagen5.png){width=60%}
+
+![Alumnos matriculados según facultad y sexo, semestre 2024-I](imagen/imagen4.png)
+
+![Alumnos matriculados según escuelas profesionales, semestre 2024-I](imagen/imagen2.png)
+
+![Alumnos matriculados por escuelas profesionales y sexo, semestre 2024-I](imagen/imagen1.png)
+
+![Alumnos matriculados según región de procedencia, semestre 2024-I](imagen/imagen6.png){width=60%}
+
+![Alumnos matriculados de la región Cusco, semestre 2024-I](imagen/imagen8.png){width=60%}
+
+![Alumnos matriculados de la provincia del Cusco, semestre 2024-I](imagen/imagen7.png){width=60%}
+
+![Alumnos matriculados por edad, semestre 2024-I](imagen/imagen9.png){width=80%}
+
+## Octubre
+
+### Elaboración del registro de beneficiarios del comedor universitario (2023-I, 2023-II y 2024-I)
+
+Se tuvo una solicitud del rectorado en el que se pedia una elaboración del registro de estudiantes beneficiarios, es decir un registro que cuente las siguientes características:
+- Estudiantes organizados por escuela profesional
+- Veces en la que un estudiante ha reservado cupo
+- Veces en la que el estudiante ha hecho uso del comedor en un cupo
+
+A continuación se muestran los primeros datos de dicho registro
+
+![Registro de beneficiarios del comedor universitario (2023-I, 2023-II y 2024-I)](imagen/cuadro1.png)
+
+### Elaboración del registro de becados beneficiarios del comedor universitario (2023-I, 2023-II y 2024-I)
+
+En la segund aparte de la solicitud, se disponia elaborar un registro para los becados beneficiarios del comedor, con el objetivo d eidentificar a la población que hacia uso del beneficio y la que no mlo hacia para establecer nuevos filtros en la selección de beneficiarios del comedor universitario, para los cuales se tuvo las siguientes características:
+
+- Estudiantes organizados por escuela profesional
+- Veces en la que el estudiante ha hecho uso del comedor en un cupo
+
+![Registro de becarios beneficiarios del comedor universitario (2023-I, 2023-II y 2024-I)](imagen/cuadro2.png)
+
+### Elaboración de estadísticos de los docentes nombrados en el semestre 2024-1
+
+
+
+# Conclusiones
+
+La realización de mis prácticas preprofesionales en la Oficina de Gestión de la Calidad me permitió obtener una visión más profunda sobre la situación actual de nuestra universidad y los procesos implementados por el equipo de la oficina para mejorar cada aspecto y elevar la calidad universitaria.
+
+Este entorno me ayudó a expandir mis ideas y a considerar soluciones fuera del contexto habitual para abordar problemas específicos. También tuve la oportunidad de aplicar y desarrollar los conocimientos y habilidades adquiridos durante mi formación universitaria.
+
+Las actividades y procesos en los que participé fueron cruciales para el avance de la Oficina de Gestión de la Calidad. Comprendí que los procesos de calidad requieren un orden meticuloso y la ejecución eficiente de tareas pequeñas para evitar deficiencias en las actividades y asegurar la calidad general.
+
+Todo proceso destinado a ser considerado de calidad debe seguir un orden definido en su aplicación o desarrollo. Los procedimientos llevados a cabo en la Universidad Nacional de San Antonio Abad del Cusco están sujetos a un control riguroso, y los futuros procesos también deben seguir un desarrollo bien estructurado. La próxima evaluación para la renovación del Licenciamiento Institucional exigirá un proceso definido que será supervisado por la Oficina de Gestión de la Calidad como principal ente de verificación.
+
+Aprendí mucho sobre el funcionamiento de la Oficina de Gestión de la Calidad, la cual actúa como órgano asesor dentro de la UNSAAC, gestionando y consolidando el sistema de gestión de calidad educativa.
+
+También comprendí la importancia del trabajo en equipo. Mi experiencia en la Oficina ha sido enriquecedora tanto a nivel profesional como personal.
+
+Agradezco a la Universidad Nacional de San Antonio Abad del Cusco por brindarme la oportunidad de realizar mis prácticas en la Oficina de Gestión de la Calidad, permitiéndome aplicar mis conocimientos en un área específica. Expreso mi gratitud a las señoritas Milagros Echegaray Mayorga, Yadira Ríos Caballero y Urzula del Carmen Fernández Palomino por su apoyo y asistencia durante mi tiempo en la Oficina. Asimismo, agradezco al Dr. Walter Orestes Antezana Julián por la oportunidad de realizar mis prácticas en esta entidad.
+
+# Recomendaciones
+
+Para los futuros practicantes, se aconseja que se integren de inmediato al inicio de sus prácticas y se comprometan con cada tarea asignada o seleccionada. Es crucial que se esfuercen al máximo y aprovechen al máximo la experiencia para su desarrollo profesional.
+
+Sugiero a los estudiantes que buscan realizar prácticas preprofesionales considerar la Oficina de Gestión de la Calidad, ya que ofrece un entorno que apoya y proporciona servicios valiosos para su formación. 
+Asimismo, es esencial que la Oficina continúe brindando un apoyo constante a los estudiantes. Este respaldo fomenta un ambiente de confianza y colaboración, facilitando así la culminación exitosa del proceso de prácticas preprofesionales.
+
+# Asistencia
+

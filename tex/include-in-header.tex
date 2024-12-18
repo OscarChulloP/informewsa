@@ -1,0 +1,13 @@
+\addtokomafont{disposition}{\rmfamily}
+\KOMAoptions{chapterprefix=false,appendixprefix=true} %% chapterprefix=true para que aparezca como capitulo 1 o =false para que solo aparezca el numero romano
+\KOMAoptions{headings=small}
+\raggedright
+\setkomafont{pageheadfoot}{\normalfont\normalcolor\footnotesize}
+\setkomafont{pagenumber}{\normalfont\normalcolor\footnotesize}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{equation}}
+\usepackage{ragged2e}
+\justifying
