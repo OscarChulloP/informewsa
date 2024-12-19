@@ -47,15 +47,86 @@ A continuación se muestran los primeros datos de dicho registro
 
 ### Elaboración del registro de becados beneficiarios del comedor universitario (2023-I, 2023-II y 2024-I)
 
-En la segund aparte de la solicitud, se disponia elaborar un registro para los becados beneficiarios del comedor, con el objetivo d eidentificar a la población que hacia uso del beneficio y la que no mlo hacia para establecer nuevos filtros en la selección de beneficiarios del comedor universitario, para los cuales se tuvo las siguientes características:
+En la segunda parte de la solicitud, se disponia elaborar un registro para los becados beneficiarios del comedor, con el objetivo d eidentificar a la población que hacia uso del beneficio y la que no mlo hacia para establecer nuevos filtros en la selección de beneficiarios del comedor universitario, para los cuales se tuvo las siguientes características:
 
 - Estudiantes organizados por escuela profesional
 - Veces en la que el estudiante ha hecho uso del comedor en un cupo
 
 ![Registro de becarios beneficiarios del comedor universitario (2023-I, 2023-II y 2024-I)](imagen/cuadro2.png)
 
-### Elaboración de estadísticos de los docentes nombrados en el semestre 2024-1
+### Elaboración de estadísticos de los docentes nombrados en el semestre 2024-I
 
+Se tuvo la base de datos de los docentes nombrados que ejercieron su profesión en el semestre académico 2024-I, para el cual se realizaron los estadísticos correspondientes según el compendio estadístico, obteniéndose los siguientes resultados:
+
+![Docentes nombrados según sexo, semestre 2024-I](imagen/sao.png)
+
+![Docentes nombrados según departamento académico y sexo, semestre 2024-I](imagen/sao1.png)
+
+![Docentes nombrados según facultad y departamento académico, semestre 2024-I](imagen/sao2.png)
+
+![Docentes nombrados según nivel académico alcanzado, semestre 2024-I](imagen/sao3.png)
+
+![Docentes nombrados según nivel académico alcanzado al semestre 2024-I](imagen/sao4.png)
+
+![Docentes nombrados según categoría y dedicación por departamento académico y sexo, semestre 2024-I](imagen/sao5.png)
+
+![Docentes nombrados según categoría y dedicación por departamento académico y sexo; semestre 2024-I](imagen/sao6.png)
+
+![Docentes nombrados según categoría y dedicación, semestre 2024-I](imagen/sao7.png)
+
+### Revisión de "Variables universitarias 2019-2023 y proyecciones estadísticas 2024-2028"
+
+Se tenia el archivo de "Variables universitarias 2019-2023 y proyecciones estadísticas 2024-2028", sin embargo se tuvieron algunos errores en la redacción y organización de dicho documento, por lo que se hizo una revisión detallada para la levantación de observaciones, posterior a la revisión se realizo la publicacion del documento al cual puede accederse mediante el siguiente link: https://drive.google.com/file/d/1aFfQPyAojehU2Fm-d6QCdIGCR4-4VPjz/view
+
+### Elaboracion de estadísticos de presupuesto 2019-2023
+
+Se inició con la elaboración de estadísticos de presupuesto 2019-2023, en los que se describe el presupuesto autorizado, ejecutado y el saldo restante, según asignaciones genéricas entre recursos ordinarios y recursos directamente recaudados, en este mes se realizo lo correspondiente al año 2019.
+
+### Revisión del informe de graduados y titulados 2023
+
+Se hizo una revisión del informe de graduados y titulados, de los cuales se ha contrastado las bases de datos para realizar el registro completo de graduados y titulados del 2023, para este registro se utilizo la base de datos de años anteriores como datos para complementar los datos faltantes en el informe
+
+## Noviembre
+
+### Elaboracion de estadísticos de presupuesto 2019-2023 
+
+Se continuó con la elaboración de estadísticos de presupuesto 2019-2023, en los que se describe el presupuesto autorizado, ejecutado y el saldo restante, según asignaciones genéricas entre recursos ordinarios y recursos directamente recaudados, en este mes se realizo lo faltante y se completaron los estadísticos, véase uno de los cuadros a continuación:
+
+![Presupuesto Total ejecutado entre Recursos Ordinarios y Recursos Directamente Recaudados 2019 - Servicios Adecuados de Apoyo al Estudiante (Bienestar y Asistencia Social)](imagen/eje1.png)
+
+Se realizaron series por asignación genérica con respecto al presupuesto ejecutado, a continuación se muestra una de las series realizadas:
+
+![Tabla de Presupuesto Total ejecutado 2019-2023](imagen/pres.png)
+
+![Figura de Presupuesto Total ejecutado 2019-2023](imagen/pres1.png)
+
+### Instalación de R y Python
+
+Realizando una visión al futuro se hizo la instalación de los software R (Rmarkdown + quarto) y Python (Anaconda Navigator) y $\LaTeX$ para el analisis de datos estadísticos mediante la programación y el machine learning.
+
+En esta sección se trabajo en una guia en HTML para nuevos usuarios de R, Rmarkdown y quarto, el cual fue publicado en RPubs, al cual puede accederse con el siguiente enlace: https://rpubs.com/Oscar_ChulloP/installR 
+
+### Elaboracion de estadísticos de presupuesto 2019-2023: Costo por estudiante
+
+Luego de la entrega de los estadísticos de presupuesto, se llegó a un acuerdo de elaborar estadísticos de gasto financiero o costo por alumno, los cuales siguieron los lineamientos de una estructura de años anteriores, a continuación se presenta los cuadros de gasto:
+
+![Presupuesto total ejecutado por escuela profesional 2019-2023](imagen/cost1.png)
+
+![Costo por alumno, 2019](imagen/2019.png)
+
+![Costo por alumno, 2020](imagen/2020.png)
+
+![Costo por alumno, 2021](imagen/2021.png)
+
+![Costo por alumno, 2022](imagen/2022.png)
+![Costo por alumno, 2023](imagen/2023.png)
+
+## Diciembre
+### Elaboracion de estadísticos de presupuesto 2019-2023 (correcciones)
+
+Se realizo una revisión detallada de los estadisticos obtenidos y estimados para cada categoria, puediendo levantarse errores en la redacción y culminarse satisfactoriamente con la producción del documento "EJECUCIÓN PRESUPUESTAL DE GASTO 2019 - 2023" 
+
+### Elaboración de proyecciones estadísticas 2024-2033
 
 
 # Conclusiones

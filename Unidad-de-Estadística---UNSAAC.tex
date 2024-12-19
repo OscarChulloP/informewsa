@@ -23,9 +23,9 @@
 \usepackage{lmodern}
 \ifPDFTeX\else  
     % xetex/luatex font selection
-    \setmainfont[]{Times New Roman}
-    \setsansfont[]{Arial}
-    \setmonofont[]{Courier New}
+  \setmainfont[]{Times New Roman}
+  \setsansfont[]{Arial}
+  \setmonofont[]{Courier New}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -38,28 +38,14 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
-\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}{
-    \@ifstar
-      \xxxParagraphStar
-      \xxxParagraphNoStar
-  }
-  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
-  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}{
-    \@ifstar
-      \xxxSubParagraphStar
-      \xxxSubParagraphNoStar
-  }
-  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
-  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -75,17 +61,15 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi%
-}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 % Set default figure placement to htbp
+\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 % definitions for citeproc citations
@@ -180,7 +164,6 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -194,6 +177,9 @@
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -208,7 +194,6 @@
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
-
 
 \title{Unidad de Estadística - UNSAAC}
 \author{Oscar Chullo Puclla \and Betty Alegre Ramos}
@@ -286,7 +271,6 @@
 \tableofcontents
 }
 \listoffigures
-
 \setstretch{2}
 \bookmarksetup{startatroot}
 
@@ -455,7 +439,7 @@ presentan los resultados obtenidos en grafícos:
 
 \caption{Alumnos matriculados según sexo, semestre 2024-I}
 
-{\centering \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{imagen/imagen3.png}
+{\centering \includegraphics[width=0.7\textwidth,height=\textheight]{imagen/imagen3.png}
 
 }
 
@@ -464,7 +448,7 @@ presentan los resultados obtenidos en grafícos:
 
 \caption{Alumnos matriculados según facultad, semestre 2024-I}
 
-{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen5.png}
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen5.png}
 
 }
 
@@ -473,7 +457,7 @@ presentan los resultados obtenidos en grafícos:
 
 \caption{Alumnos matriculados según facultad y sexo, semestre 2024-I}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/imagen4.png}}
+{\centering \includegraphics{imagen/imagen4.png}
 
 }
 
@@ -483,7 +467,7 @@ presentan los resultados obtenidos en grafícos:
 \caption{Alumnos matriculados según escuelas profesionales, semestre
 2024-I}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/imagen2.png}}
+{\centering \includegraphics{imagen/imagen2.png}
 
 }
 
@@ -493,7 +477,7 @@ presentan los resultados obtenidos en grafícos:
 \caption{Alumnos matriculados por escuelas profesionales y sexo,
 semestre 2024-I}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/imagen1.png}}
+{\centering \includegraphics{imagen/imagen1.png}
 
 }
 
@@ -503,7 +487,7 @@ semestre 2024-I}
 \caption{Alumnos matriculados según región de procedencia, semestre
 2024-I}
 
-{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen6.png}
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen6.png}
 
 }
 
@@ -512,7 +496,7 @@ semestre 2024-I}
 
 \caption{Alumnos matriculados de la región Cusco, semestre 2024-I}
 
-{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen8.png}
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen8.png}
 
 }
 
@@ -522,7 +506,7 @@ semestre 2024-I}
 \caption{Alumnos matriculados de la provincia del Cusco, semestre
 2024-I}
 
-{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen7.png}
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen7.png}
 
 }
 
@@ -531,7 +515,7 @@ semestre 2024-I}
 
 \caption{Alumnos matriculados por edad, semestre 2024-I}
 
-{\centering \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{imagen/imagen9.png}
+{\centering \includegraphics[width=0.8\textwidth,height=\textheight]{imagen/imagen9.png}
 
 }
 
@@ -556,7 +540,7 @@ A continuación se muestran los primeros datos de dicho registro
 \caption{Registro de beneficiarios del comedor universitario (2023-I,
 2023-II y 2024-I)}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/cuadro1.png}}
+{\centering \includegraphics{imagen/cuadro1.png}
 
 }
 
@@ -586,11 +570,15 @@ características:
 \caption{Registro de becarios beneficiarios del comedor universitario
 (2023-I, 2023-II y 2024-I)}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/cuadro2.png}}
+{\centering \includegraphics{imagen/cuadro2.png}
 
 }
 
 \end{figure}%
+
+\subsection{Elaboración de estadísticos de los docentes nombrados en el
+semestre
+2024-1}\label{elaboraciuxf3n-de-estaduxedsticos-de-los-docentes-nombrados-en-el-semestre-2024-1}
 
 \bookmarksetup{startatroot}
 
@@ -674,7 +662,6 @@ Estadística, U. de. (2024). \emph{Unidad de Estadística - UNSAAC}.
 \url{https://www.unsaac.edu.pe/unidad-de-estadistica-2/}
 
 \end{CSLReferences}
-
 
 
 
