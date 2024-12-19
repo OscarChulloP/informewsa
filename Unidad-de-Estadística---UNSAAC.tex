@@ -23,9 +23,9 @@
 \usepackage{lmodern}
 \ifPDFTeX\else  
     % xetex/luatex font selection
-  \setmainfont[]{Times New Roman}
-  \setsansfont[]{Arial}
-  \setmonofont[]{Courier New}
+    \setmainfont[]{Times New Roman}
+    \setsansfont[]{Arial}
+    \setmonofont[]{Courier New}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -38,14 +38,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -61,15 +75,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 % definitions for citeproc citations
@@ -164,6 +180,7 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -177,9 +194,6 @@
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -194,6 +208,7 @@
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
+
 
 \title{Unidad de Estadística - UNSAAC}
 \author{Oscar Chullo Puclla \and Betty Alegre Ramos}
@@ -271,6 +286,7 @@
 \tableofcontents
 }
 \listoffigures
+
 \setstretch{2}
 \bookmarksetup{startatroot}
 
@@ -439,7 +455,7 @@ presentan los resultados obtenidos en grafícos:
 
 \caption{Alumnos matriculados según sexo, semestre 2024-I}
 
-{\centering \includegraphics[width=0.7\textwidth,height=\textheight]{imagen/imagen3.png}
+{\centering \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{imagen/imagen3.png}
 
 }
 
@@ -448,7 +464,7 @@ presentan los resultados obtenidos en grafícos:
 
 \caption{Alumnos matriculados según facultad, semestre 2024-I}
 
-{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen5.png}
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen5.png}
 
 }
 
@@ -457,7 +473,7 @@ presentan los resultados obtenidos en grafícos:
 
 \caption{Alumnos matriculados según facultad y sexo, semestre 2024-I}
 
-{\centering \includegraphics{imagen/imagen4.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/imagen4.png}}
 
 }
 
@@ -467,7 +483,7 @@ presentan los resultados obtenidos en grafícos:
 \caption{Alumnos matriculados según escuelas profesionales, semestre
 2024-I}
 
-{\centering \includegraphics{imagen/imagen2.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/imagen2.png}}
 
 }
 
@@ -477,7 +493,7 @@ presentan los resultados obtenidos en grafícos:
 \caption{Alumnos matriculados por escuelas profesionales y sexo,
 semestre 2024-I}
 
-{\centering \includegraphics{imagen/imagen1.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/imagen1.png}}
 
 }
 
@@ -487,7 +503,7 @@ semestre 2024-I}
 \caption{Alumnos matriculados según región de procedencia, semestre
 2024-I}
 
-{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen6.png}
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen6.png}
 
 }
 
@@ -496,7 +512,7 @@ semestre 2024-I}
 
 \caption{Alumnos matriculados de la región Cusco, semestre 2024-I}
 
-{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen8.png}
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen8.png}
 
 }
 
@@ -506,7 +522,7 @@ semestre 2024-I}
 \caption{Alumnos matriculados de la provincia del Cusco, semestre
 2024-I}
 
-{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{imagen/imagen7.png}
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{imagen/imagen7.png}
 
 }
 
@@ -515,7 +531,7 @@ semestre 2024-I}
 
 \caption{Alumnos matriculados por edad, semestre 2024-I}
 
-{\centering \includegraphics[width=0.8\textwidth,height=\textheight]{imagen/imagen9.png}
+{\centering \includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{imagen/imagen9.png}
 
 }
 
@@ -540,7 +556,7 @@ A continuación se muestran los primeros datos de dicho registro
 \caption{Registro de beneficiarios del comedor universitario (2023-I,
 2023-II y 2024-I)}
 
-{\centering \includegraphics{imagen/cuadro1.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/cuadro1.png}}
 
 }
 
@@ -550,7 +566,7 @@ A continuación se muestran los primeros datos de dicho registro
 comedor universitario (2023-I, 2023-II y
 2024-I)}\label{elaboraciuxf3n-del-registro-de-becados-beneficiarios-del-comedor-universitario-2023-i-2023-ii-y-2024-i}
 
-En la segund aparte de la solicitud, se disponia elaborar un registro
+En la segunda parte de la solicitud, se disponia elaborar un registro
 para los becados beneficiarios del comedor, con el objetivo d
 eidentificar a la población que hacia uso del beneficio y la que no mlo
 hacia para establecer nuevos filtros en la selección de beneficiarios
@@ -570,7 +586,7 @@ características:
 \caption{Registro de becarios beneficiarios del comedor universitario
 (2023-I, 2023-II y 2024-I)}
 
-{\centering \includegraphics{imagen/cuadro2.png}
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/cuadro2.png}}
 
 }
 
@@ -578,75 +594,528 @@ características:
 
 \subsection{Elaboración de estadísticos de los docentes nombrados en el
 semestre
-2024-1}\label{elaboraciuxf3n-de-estaduxedsticos-de-los-docentes-nombrados-en-el-semestre-2024-1}
+2024-I}\label{elaboraciuxf3n-de-estaduxedsticos-de-los-docentes-nombrados-en-el-semestre-2024-i}
+
+Se tuvo la base de datos de los docentes nombrados que ejercieron su
+profesión en el semestre académico 2024-I, para el cual se realizaron
+los estadísticos correspondientes según el compendio estadístico,
+obteniéndose los siguientes resultados:
+
+\begin{figure}[H]
+
+\caption{Docentes nombrados según sexo, semestre 2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según departamento académico y sexo,
+semestre 2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao1.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según facultad y departamento académico,
+semestre 2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao2.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según nivel académico alcanzado, semestre
+2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao3.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según nivel académico alcanzado al semestre
+2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao4.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según categoría y dedicación por
+departamento académico y sexo, semestre 2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao5.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según categoría y dedicación por
+departamento académico y sexo; semestre 2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao6.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Docentes nombrados según categoría y dedicación, semestre
+2024-I}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/sao7.png}}
+
+}
+
+\end{figure}%
+
+\subsection{Revisión de ``Variables universitarias 2019-2023 y
+proyecciones estadísticas
+2024-2028''}\label{revisiuxf3n-de-variables-universitarias-2019-2023-y-proyecciones-estaduxedsticas-2024-2028}
+
+Se tenia el archivo de ``Variables universitarias 2019-2023 y
+proyecciones estadísticas 2024-2028'', sin embargo se tuvieron algunos
+errores en la redacción y organización de dicho documento, por lo que se
+hizo una revisión detallada para la levantación de observaciones,
+posterior a la revisión se realizo la publicacion del documento al cual
+puede accederse mediante el siguiente link:
+https://drive.google.com/file/d/1aFfQPyAojehU2Fm-d6QCdIGCR4-4VPjz/view
+
+\subsection{Elaboracion de estadísticos de presupuesto
+2019-2023}\label{elaboracion-de-estaduxedsticos-de-presupuesto-2019-2023}
+
+Se inició con la elaboración de estadísticos de presupuesto 2019-2023,
+en los que se describe el presupuesto autorizado, ejecutado y el saldo
+restante, según asignaciones genéricas entre recursos ordinarios y
+recursos directamente recaudados, en este mes se realizo lo
+correspondiente al año 2019.
+
+\subsection{Revisión del informe de graduados y titulados
+2023}\label{revisiuxf3n-del-informe-de-graduados-y-titulados-2023}
+
+Se hizo una revisión del informe de graduados y titulados, de los cuales
+se ha contrastado las bases de datos para realizar el registro completo
+de graduados y titulados del 2023, para este registro se utilizo la base
+de datos de años anteriores como datos para complementar los datos
+faltantes en el informe
+
+\section{Noviembre}\label{noviembre}
+
+\subsection{Elaboracion de estadísticos de presupuesto
+2019-2023}\label{elaboracion-de-estaduxedsticos-de-presupuesto-2019-2023-1}
+
+Se continuó con la elaboración de estadísticos de presupuesto 2019-2023,
+en los que se describe el presupuesto autorizado, ejecutado y el saldo
+restante, según asignaciones genéricas entre recursos ordinarios y
+recursos directamente recaudados, en este mes se realizo lo faltante y
+se completaron los estadísticos, véase uno de los cuadros a
+continuación:
+
+\begin{figure}[H]
+
+\caption{Presupuesto Total ejecutado entre Recursos Ordinarios y
+Recursos Directamente Recaudados 2019 - Servicios Adecuados de Apoyo al
+Estudiante (Bienestar y Asistencia Social)}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/eje1.png}}
+
+}
+
+\end{figure}%
+
+Se realizaron series por asignación genérica con respecto al presupuesto
+ejecutado, a continuación se muestra una de las series realizadas:
+
+\begin{figure}[H]
+
+\caption{Tabla de Presupuesto Total ejecutado 2019-2023}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/pres.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Figura de Presupuesto Total ejecutado 2019-2023}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/pres1.png}}
+
+}
+
+\end{figure}%
+
+\subsection{Instalación de R y
+Python}\label{instalaciuxf3n-de-r-y-python}
+
+Realizando una visión al futuro se hizo la instalación de los software R
+(Rmarkdown + quarto) y Python (Anaconda Navigator) y LaTeX para el
+analisis de datos estadísticos mediante la programación y el machine
+learning.
+
+En esta sección se trabajo en una guia en HTML para nuevos usuarios de
+R, Rmarkdown y quarto, el cual fue publicado en RPubs, al cual puede
+accederse con el siguiente enlace:
+https://rpubs.com/Oscar\_ChulloP/installR
+
+\subsection{Elaboracion de estadísticos de presupuesto 2019-2023: Costo
+por
+estudiante}\label{elaboracion-de-estaduxedsticos-de-presupuesto-2019-2023-costo-por-estudiante}
+
+Luego de la entrega de los estadísticos de presupuesto, se llegó a un
+acuerdo de elaborar estadísticos de gasto financiero o costo por alumno,
+los cuales siguieron los lineamientos de una estructura de años
+anteriores, a continuación se presenta los cuadros de gasto:
+
+\begin{figure}[H]
+
+\caption{Presupuesto total ejecutado por escuela profesional 2019-2023}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/cost1.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno, 2019}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2019.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno, 2020}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2020.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno, 2021}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2021.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno, 2022}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2022.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno, 2023}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2023.png}}
+
+}
+
+\end{figure}%
+
+\pagebreak
+
+\section{Diciembre}\label{diciembre}
+
+\subsection{Elaboracion de estadísticos de presupuesto 2019-2023
+(correcciones)}\label{elaboracion-de-estaduxedsticos-de-presupuesto-2019-2023-correcciones}
+
+Se realizo una revisión detallada de los estadisticos obtenidos y
+estimados para cada categoria, puediendo levantarse errores en la
+redacción y culminarse con la producción del documento ``EJECUCIÓN
+PRESUPUESTAL DE GASTO 2019 - 2023''
+
+\subsection{Elaboración de estadísticos de la E.P. de Ciencias de la
+Comunicación}\label{elaboraciuxf3n-de-estaduxedsticos-de-la-e.p.-de-ciencias-de-la-comunicaciuxf3n}
+
+Se recibió una solicitud de parte de la Dirección de la E.P. de Ciencias
+de la Comunicación, en los que se pedía todos los estadísticos
+correspondientes a dicha escuela profesional, reaizandose
+satisfactoriamente dichos estadísticos, a continuación se presentan
+algunos de los estadísticos presentados:
+
+\begin{figure}[H]
+
+\caption{Tabla de Presupuesto Total entre Recursos Ordinarios Y Recursos
+Directamente Recaudados 2019 - Servicios Adecuados de Apoyo al
+Estudiante (Bienestar y Asistencia Social)}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/fin.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Presupuesto Total ejecutado - E.P. Ciencias de la Comunicación
+2019-2023}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/fin1.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno - E.P. Ciencias de la Comunicación 2019}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2019m.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno - E.P. Ciencias de la Comunicación 2020}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2020m.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno - E.P. Ciencias de la Comunicación 2021}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2021m.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno - E.P. Ciencias de la Comunicación 2022}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2022m.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Costo por alumno - E.P. Ciencias de la Comunicación 2023}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/2023m.png}}
+
+}
+
+\end{figure}%
+
+\subsection{Elaboración de proyecciones estadísticas
+2024-2034}\label{elaboraciuxf3n-de-proyecciones-estaduxedsticas-2024-2034}
+
+Se tiene que la Unidad de Estadística presenta regularmente una
+publicación acerca de las proyecciones estadísticas, las que
+correspondian a la publicación eran proyecciones estadística del
+2024-2034, se realizaron proyecciones con respecto a las siguientes
+variables universitarias:
+
+\begin{itemize}
+\tightlist
+\item
+  Vacantes
+\item
+  Postulantes
+\item
+  Ingresantes
+\item
+  Matriculados
+\item
+  Egresados
+\item
+  Graduados
+\item
+  Titulados
+\item
+  Docentes nombrados
+\item
+  Docentes contratados
+\item
+  Personal administrativo nombrado y contratado
+\end{itemize}
+
+Teniendose las siguientes proyecciones:
+
+\begin{figure}[H]
+
+\caption{Proyección de vacantes 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/vac.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de postulantes 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/pos.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de ingresantes 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/ing.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de matriculados 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/mat.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de egresados 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/egr.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de graduados 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/gra.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de titulados 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/tit.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de docentes nombrados 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/dnom.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de docentes contratados 2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/dcon.png}}
+
+}
+
+\end{figure}%%
+\begin{figure}[H]
+
+\caption{Proyección de personal administrativo nombrado y contratado
+2024-2034}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{imagen/per.png}}
+
+}
+
+\end{figure}%
 
 \bookmarksetup{startatroot}
 
 \chapter{Conclusiones}\label{conclusiones}
 
-La realización de mis prácticas preprofesionales en la Oficina de
-Gestión de la Calidad me permitió obtener una visión más profunda sobre
-la situación actual de nuestra universidad y los procesos implementados
-por el equipo de la oficina para mejorar cada aspecto y elevar la
-calidad universitaria.
+La realización de Prácticas pre-Profesionales en la Unidad de
+Estadística, me permitió obtener una visión más profunda desde el
+enfoque estadístico sobre la situación de la Universidad Nacional de San
+Antonio abad del Cusco, aplicandose la estadística descriptiva en los
+datos que se van proporcionando.
 
-Este entorno me ayudó a expandir mis ideas y a considerar soluciones
-fuera del contexto habitual para abordar problemas específicos. También
-tuve la oportunidad de aplicar y desarrollar los conocimientos y
-habilidades adquiridos durante mi formación universitaria.
+Este entorno hace que uno se evalue y considere soluciones fuera del
+contexto habitual, se tuvo la oportunidad de aplicar los conocimientos
+de estadistica descriptiva y el office, conocimientos y habilidades
+adquiridas durante la formación académica.
 
-Las actividades y procesos en los que participé fueron cruciales para el
-avance de la Oficina de Gestión de la Calidad. Comprendí que los
-procesos de calidad requieren un orden meticuloso y la ejecución
-eficiente de tareas pequeñas para evitar deficiencias en las actividades
-y asegurar la calidad general.
+El analisis descriptivo es una labor sencilla pero pesada debido a la
+pérdida de información que es recurrente en las bases de datos que la
+Universidad le proporciona a la Unidad de Estadística.
 
-Todo proceso destinado a ser considerado de calidad debe seguir un orden
-definido en su aplicación o desarrollo. Los procedimientos llevados a
-cabo en la Universidad Nacional de San Antonio Abad del Cusco están
-sujetos a un control riguroso, y los futuros procesos también deben
-seguir un desarrollo bien estructurado. La próxima evaluación para la
-renovación del Licenciamiento Institucional exigirá un proceso definido
-que será supervisado por la Oficina de Gestión de la Calidad como
-principal ente de verificación.
+Se aprendió bastante sobre las funciones de la Unidad de Estadística y
+se resalta la posición de ser servicial dentro de la Unidad de
+Estadistica para con la comunidad universitaria.
 
-Aprendí mucho sobre el funcionamiento de la Oficina de Gestión de la
-Calidad, la cual actúa como órgano asesor dentro de la UNSAAC,
-gestionando y consolidando el sistema de gestión de calidad educativa.
-
-También comprendí la importancia del trabajo en equipo. Mi experiencia
-en la Oficina ha sido enriquecedora tanto a nivel profesional como
-personal.
-
-Agradezco a la Universidad Nacional de San Antonio Abad del Cusco por
-brindarme la oportunidad de realizar mis prácticas en la Oficina de
-Gestión de la Calidad, permitiéndome aplicar mis conocimientos en un
-área específica. Expreso mi gratitud a las señoritas Milagros Echegaray
-Mayorga, Yadira Ríos Caballero y Urzula del Carmen Fernández Palomino
-por su apoyo y asistencia durante mi tiempo en la Oficina. Asimismo,
-agradezco al Dr.~Walter Orestes Antezana Julián por la oportunidad de
-realizar mis prácticas en esta entidad.
+Es por ello que agradezco a la Universidad Nacional de San Antonio Abad
+del Cusco por brindarme la oportunidad de realizar las Prácticas
+Pre-Profesionales en la Unidad de Estadística, permitiéndome aplicar
+parte de los conocimientos adquiridos en la estadística. Asimismo,
+agradezco al Econ. Carlos Huamán Aguilar por permitirme la oportunidad
+de realizar las prácticas.
 
 \bookmarksetup{startatroot}
 
-\chapter{Recomendaciones}\label{recomendaciones}
+\chapter{Recomendaciones y
+Sugerencias}\label{recomendaciones-y-sugerencias}
 
-Para los futuros practicantes, se aconseja que se integren de inmediato
-al inicio de sus prácticas y se comprometan con cada tarea asignada o
-seleccionada. Es crucial que se esfuercen al máximo y aprovechen al
-máximo la experiencia para su desarrollo profesional.
+Viendo las dificultades que se tuvieron, me gustaria que el Centro de
+Cómputo administre con más orden las bases de datos, es más sería genial
+que la Universidad implementase una licencia de SQL para el manejo de
+datos y el modelamiento correspondiente, la universidad deberia
+aprovechar la tecnologia y la ciencia de datos para mejorar en los
+pocesos que concierne necesarios.
 
-Sugiero a los estudiantes que buscan realizar prácticas preprofesionales
-considerar la Oficina de Gestión de la Calidad, ya que ofrece un entorno
-que apoya y proporciona servicios valiosos para su formación. Asimismo,
-es esencial que la Oficina continúe brindando un apoyo constante a los
-estudiantes. Este respaldo fomenta un ambiente de confianza y
-colaboración, facilitando así la culminación exitosa del proceso de
-prácticas preprofesionales.
+Tambien me gustaria que en la Unidad de Estadística se implementase
+procesos completos de la ciencia de datos, que no solo abarque la
+estadística descriptiva, el compendio estadístico que se presenta cada
+año, es rutinario y no despierta el interés de su elaboración para el
+público en general, sería basante interesante que se pudiese aplicar el
+machine learning para el modelamiento y la presentación de resultados.
+
+Sugiero a los estudiantes que buscan realizar Prácticas
+Pre-Profesionales, busquen explorar e implementar nuevas herramientas y
+procesos de análisis estadístico, se tiene al R y Python como software
+estadísticos que cada vez van ampliando nuevos procesos, el cual pueden
+optimizar el trabajo que se realiza. La importancia de los conocimientos
+en ofimática han ido perdiendo su relevancia pero para lo que se realiza
+en la Unidad de Estadística es esencial tenerlo presente.
+
+Dado esto agradezco por los conociemientos adquiridos durante la
+duración de las Prácticas Pre-Profesionales (PPP) en la Unidad de
+Estadística, tener una vision descriptiva de esta, hace que nuevas ideas
+de mejora surgan.
 
 \bookmarksetup{startatroot}
 
 \chapter{Asistencia}\label{asistencia}
+
+\pandocbounded{\includegraphics[keepaspectratio]{imagen/asis.png}}
 
 \bookmarksetup{startatroot}
 
@@ -662,6 +1131,7 @@ Estadística, U. de. (2024). \emph{Unidad de Estadística - UNSAAC}.
 \url{https://www.unsaac.edu.pe/unidad-de-estadistica-2/}
 
 \end{CSLReferences}
+
 
 
 

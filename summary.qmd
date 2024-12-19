@@ -102,7 +102,7 @@ Se realizaron series por asignación genérica con respecto al presupuesto ejecu
 
 ### Instalación de R y Python
 
-Realizando una visión al futuro se hizo la instalación de los software R (Rmarkdown + quarto) y Python (Anaconda Navigator) y $\LaTeX$ para el analisis de datos estadísticos mediante la programación y el machine learning.
+Realizando una visión al futuro se hizo la instalación de los software R (Rmarkdown + quarto) y Python (Anaconda Navigator) y LaTeX para el analisis de datos estadísticos mediante la programación y el machine learning.
 
 En esta sección se trabajo en una guia en HTML para nuevos usuarios de R, Rmarkdown y quarto, el cual fue publicado en RPubs, al cual puede accederse con el siguiente enlace: https://rpubs.com/Oscar_ChulloP/installR 
 
@@ -119,38 +119,93 @@ Luego de la entrega de los estadísticos de presupuesto, se llegó a un acuerdo 
 ![Costo por alumno, 2021](imagen/2021.png)
 
 ![Costo por alumno, 2022](imagen/2022.png)
+
 ![Costo por alumno, 2023](imagen/2023.png)
+
+\pagebreak
 
 ## Diciembre
 ### Elaboracion de estadísticos de presupuesto 2019-2023 (correcciones)
 
-Se realizo una revisión detallada de los estadisticos obtenidos y estimados para cada categoria, puediendo levantarse errores en la redacción y culminarse satisfactoriamente con la producción del documento "EJECUCIÓN PRESUPUESTAL DE GASTO 2019 - 2023" 
+Se realizo una revisión detallada de los estadisticos obtenidos y estimados para cada categoria, puediendo levantarse errores en la redacción y culminarse con la producción del documento "EJECUCIÓN PRESUPUESTAL DE GASTO 2019 - 2023" 
 
-### Elaboración de proyecciones estadísticas 2024-2033
+### Elaboración de estadísticos de la E.P. de Ciencias de la Comunicación
+Se recibió una solicitud de parte de la Dirección de la E.P. de Ciencias de la Comunicación, en los que se pedía todos los estadísticos correspondientes a dicha escuela profesional, reaizandose satisfactoriamente dichos estadísticos, a continuación se presentan algunos de los estadísticos presentados:
 
+![Tabla de Presupuesto Total entre Recursos Ordinarios Y Recursos Directamente Recaudados 2019 - Servicios Adecuados de Apoyo al Estudiante (Bienestar y Asistencia Social)](imagen/fin.png)
+
+![Presupuesto Total ejecutado - E.P. Ciencias de la Comunicación 2019-2023](imagen/fin1.png)
+
+![Costo por alumno - E.P. Ciencias de la Comunicación 2019](imagen/2019m.png)
+
+![Costo por alumno - E.P. Ciencias de la Comunicación 2020](imagen/2020m.png)
+
+![Costo por alumno - E.P. Ciencias de la Comunicación 2021](imagen/2021m.png)
+
+![Costo por alumno - E.P. Ciencias de la Comunicación 2022](imagen/2022m.png)
+
+![Costo por alumno - E.P. Ciencias de la Comunicación 2023](imagen/2023m.png)
+
+### Elaboración de proyecciones estadísticas 2024-2034
+
+Se tiene que la Unidad de Estadística presenta regularmente una publicación acerca de las proyecciones estadísticas, las que correspondian a la publicación eran proyecciones estadística del 2024-2034, se realizaron proyecciones con respecto a las siguientes variables universitarias:
+
+- Vacantes
+- Postulantes
+- Ingresantes
+- Matriculados
+- Egresados
+- Graduados
+- Titulados
+- Docentes nombrados
+- Docentes contratados
+- Personal administrativo nombrado y contratado
+
+Teniendose las siguientes proyecciones:
+
+![Proyección de vacantes 2024-2034](imagen/vac.png)
+
+![Proyección de postulantes 2024-2034](imagen/pos.png)
+
+![Proyección de ingresantes 2024-2034](imagen/ing.png)
+
+![Proyección de matriculados 2024-2034](imagen/mat.png)
+
+![Proyección de egresados 2024-2034](imagen/egr.png)
+
+![Proyección de graduados 2024-2034](imagen/gra.png)
+
+![Proyección de titulados 2024-2034](imagen/tit.png)
+
+![Proyección de docentes nombrados 2024-2034](imagen/dnom.png)
+
+![Proyección de docentes contratados 2024-2034](imagen/dcon.png)
+
+![Proyección de personal administrativo nombrado y contratado 2024-2034](imagen/per.png)
 
 # Conclusiones
 
-La realización de mis prácticas preprofesionales en la Oficina de Gestión de la Calidad me permitió obtener una visión más profunda sobre la situación actual de nuestra universidad y los procesos implementados por el equipo de la oficina para mejorar cada aspecto y elevar la calidad universitaria.
+La realización de Prácticas pre-Profesionales en la Unidad de Estadística, me permitió obtener una visión más profunda desde el enfoque estadístico sobre la situación de la Universidad Nacional de San Antonio abad del Cusco, aplicandose la estadística descriptiva en los datos que se van proporcionando.
 
-Este entorno me ayudó a expandir mis ideas y a considerar soluciones fuera del contexto habitual para abordar problemas específicos. También tuve la oportunidad de aplicar y desarrollar los conocimientos y habilidades adquiridos durante mi formación universitaria.
+Este entorno hace que uno se evalue y considere soluciones fuera del contexto habitual, se tuvo la oportunidad de aplicar los conocimientos de estadistica descriptiva y el office, conocimientos y habilidades adquiridas durante la formación académica.
 
-Las actividades y procesos en los que participé fueron cruciales para el avance de la Oficina de Gestión de la Calidad. Comprendí que los procesos de calidad requieren un orden meticuloso y la ejecución eficiente de tareas pequeñas para evitar deficiencias en las actividades y asegurar la calidad general.
+El analisis descriptivo es una labor sencilla pero pesada debido a la pérdida de información que es recurrente en las bases de datos que la Universidad le proporciona a la Unidad de Estadística. 
 
-Todo proceso destinado a ser considerado de calidad debe seguir un orden definido en su aplicación o desarrollo. Los procedimientos llevados a cabo en la Universidad Nacional de San Antonio Abad del Cusco están sujetos a un control riguroso, y los futuros procesos también deben seguir un desarrollo bien estructurado. La próxima evaluación para la renovación del Licenciamiento Institucional exigirá un proceso definido que será supervisado por la Oficina de Gestión de la Calidad como principal ente de verificación.
+Se aprendió bastante sobre las funciones de la Unidad de Estadística y se resalta la posición de ser servicial dentro de la Unidad de Estadistica para con la comunidad universitaria.
 
-Aprendí mucho sobre el funcionamiento de la Oficina de Gestión de la Calidad, la cual actúa como órgano asesor dentro de la UNSAAC, gestionando y consolidando el sistema de gestión de calidad educativa.
+Es por ello que agradezco a la Universidad Nacional de San Antonio Abad del Cusco por brindarme la oportunidad de realizar las Prácticas Pre-Profesionales en la Unidad de Estadística, permitiéndome aplicar parte de los conocimientos adquiridos en la estadística. Asimismo, agradezco al Econ. Carlos Huamán Aguilar por permitirme la oportunidad de realizar las prácticas.
 
-También comprendí la importancia del trabajo en equipo. Mi experiencia en la Oficina ha sido enriquecedora tanto a nivel profesional como personal.
+# Recomendaciones y Sugerencias
 
-Agradezco a la Universidad Nacional de San Antonio Abad del Cusco por brindarme la oportunidad de realizar mis prácticas en la Oficina de Gestión de la Calidad, permitiéndome aplicar mis conocimientos en un área específica. Expreso mi gratitud a las señoritas Milagros Echegaray Mayorga, Yadira Ríos Caballero y Urzula del Carmen Fernández Palomino por su apoyo y asistencia durante mi tiempo en la Oficina. Asimismo, agradezco al Dr. Walter Orestes Antezana Julián por la oportunidad de realizar mis prácticas en esta entidad.
+Viendo las dificultades que se tuvieron, me gustaria que el Centro de Cómputo administre con más orden las bases de datos, es más sería genial que la Universidad implementase una licencia de SQL para el manejo de datos y el modelamiento correspondiente, la universidad deberia aprovechar la tecnologia y la ciencia de datos para mejorar en los pocesos que concierne necesarios.
 
-# Recomendaciones
+Tambien me gustaria que en la Unidad de Estadística se implementase procesos completos de la ciencia de datos, que no solo abarque la estadística descriptiva, el compendio estadístico que se presenta cada año, es rutinario y no despierta el interés de su elaboración para el público en general, sería basante interesante que se pudiese aplicar el machine learning para el modelamiento y la presentación de resultados.
 
-Para los futuros practicantes, se aconseja que se integren de inmediato al inicio de sus prácticas y se comprometan con cada tarea asignada o seleccionada. Es crucial que se esfuercen al máximo y aprovechen al máximo la experiencia para su desarrollo profesional.
+Sugiero a los estudiantes que buscan realizar Prácticas Pre-Profesionales, busquen explorar e implementar nuevas herramientas y procesos de análisis estadístico, se tiene al R y Python como software estadísticos que cada vez van ampliando nuevos procesos, el cual pueden optimizar el trabajo que se realiza. La importancia de los conocimientos en ofimática han ido perdiendo su relevancia pero para lo que se realiza en la Unidad de Estadística es esencial tenerlo presente.
 
-Sugiero a los estudiantes que buscan realizar prácticas preprofesionales considerar la Oficina de Gestión de la Calidad, ya que ofrece un entorno que apoya y proporciona servicios valiosos para su formación. 
-Asimismo, es esencial que la Oficina continúe brindando un apoyo constante a los estudiantes. Este respaldo fomenta un ambiente de confianza y colaboración, facilitando así la culminación exitosa del proceso de prácticas preprofesionales.
+Dado esto agradezco por los conociemientos adquiridos durante la duración de las Prácticas Pre-Profesionales (PPP) en la Unidad de Estadística, tener una vision descriptiva de esta, hace que nuevas ideas de mejora surgan.
 
 # Asistencia
+
+![](imagen/asis.png)
 
